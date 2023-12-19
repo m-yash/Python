@@ -1,4 +1,4 @@
-import pymysql
+import pymysql 
 
 #create connection
 #add your inputs as ("hostname","username","password","database name")
