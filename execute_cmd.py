@@ -1,4 +1,4 @@
-import os
+import os 
 os.system('cmd /k "dir"') #example
 
 #use cmd /k to Run Command and then return to the CMD Prompt
