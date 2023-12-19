@@ -1,8 +1,8 @@
 from urllib.request import urlopen
 import urllib
-
+ 
 def check_internet():
-    try:
+    try: 
         urlopen('https://www.google.com', timeout=5)
         return True
         
