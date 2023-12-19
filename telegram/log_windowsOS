@@ -1,0 +1,48 @@
+# This script logs currently running application on Windows and sends it to your Telegram bot as a message on timely period
+
+import psutil
+import pygetwindow as gw
+
+import telebot
+from time import sleep
+from datetime import datetime
+
+api = '' #Enter here Telegram API key here
+id =  #Message ID of the bot you setup on Telegram
+
+print('on')
+
+bot = telebot.TeleBot(api, parse_mode=None)
+
+def automated_msg():
+
+    global bot, api, id
+
+    while True:
+        msg = ''
+        for i in set(gw.getAllTitles()):
+            if i == '' or 'Input' in i or 'NVIDIA' in i or 'Program Manager' in i:
+                pass
+            else:
+                msg += i + '\n'
+        
+        msg += '\n' + str(datetime.now())
+    
+        bot.send_message(id,''.join(msg))
+        sleep(10) #Set time loop for message
+
+automated_msg()
+@bot.message_handler(commands=['log'])
+def bot_welcome(message):
+    msg = ''
+
+    for i in set(gw.getAllTitles()):
+        if i == '' or 'Input' in i or 'NVIDIA' in i or 'Program Manager' in i:
+            pass
+        else:
+            msg += i + '\n'
+    bot.reply_to(message, ''.join(msg))
+
+bot.infinity_polling()
+# command_msg()
+
