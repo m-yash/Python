@@ -27,8 +27,5 @@ def PortScanner():
             # service_name.append(socket.getservbyport(port,"tcp"))
             open_ports_list.append(port)
             #print("{} is open".format(port))
-        
-    # for i in open_ports_list:
-    #     print(i)
     print(open_ports_list)
 PortScanner()
