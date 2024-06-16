@@ -2,6 +2,7 @@ import PIL
 from tkinter.filedialog import *
 from PIL import Image
 
+#file explorer opener
 file_loc=askopenfilenames()
 img = Image.open(file_loc[0])
 
