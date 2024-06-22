@@ -23,5 +23,7 @@ for i in data:
 
 print(firstname,lastname)
 con.commit()
+
+#close connection
 con.close()
 
