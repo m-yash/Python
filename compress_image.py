@@ -1,5 +1,5 @@
 import PIL
-from tkinter.filedialog import *
+from tkinter.filedialog import * 
 from PIL import Image
 
 #file explorer opener
